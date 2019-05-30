@@ -10,11 +10,11 @@ It is in the middle of a simulation.
 The simulation is that of a DC Motor.
 The characteristics of the DC Motor is adjusted by adjusting the constants in the start part of the c++ file.
 
-Then there is an inner part where the machine characteristics are trasnfered to variables where the control part can get them.  
+Then there is an inner part where the machine characteristics are transfered to variables where the control part can get them.  
 These are speed and current.  
 These are suppose to be measurements taken by the micro controller.
 
-The thing that "learns" is right in the middle.  I will add parts of or reference to the least square method from my text book to help you get what is happening there, but it is just matrices being inverted, transposed and multiplied, etc.  Very quickly because they are small matrices, because a DC machine is not that complicated.
+The thing that "learns" is right in the middle.  I will add parts of or reference to the least square method from my text book to help you get what is happening there, but it is just matrices being inverted, transposed and multiplied, etc.  Very quickly because they are small matrices, because a DC machine is not that complicated.  I actually skip some of the maths and plug the samples and square of the samples directly. Not that it really has to be ThAt fast.
 
 A very interesting thing is happening right there and that is that you find yourself in a sort of unitless world.  The measurements samples are just added together and the maths just sorts it out.  This also makes it good for using it anywhere.  
 The model is then used to find what voltage to apply in order to achieve a certain speed in the future.  (One sample ahead in the simulation.)
@@ -29,4 +29,4 @@ At least you don't have to fight overshoot and steady state errors, and you don'
 
 And that is it.
 
-So it is the part in the middle and all the matrix functions you want to take out and put in your PIC, or Arduino.  Put it in a function that returns a future voltage value for a given speed and current measurement and a required speed in the future.  I will assist in that later.
+So it is the part in the middle and all the matrix functions you want to take out and put in your PIC, or Arduino.  Put it in a function that returns a future voltage value for a given speed and current measurement and a required speed in the future.  I will assist in that later.  So what is a pole and a zero again?
